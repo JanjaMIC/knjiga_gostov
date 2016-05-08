@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pregled vnosov vseh gostov</title>
+</head>
+<body>
+    <h1>Pregled vnosov vseh gostov</h1>
+
+    {% for guestbook in vsi_vnosi %}
+        <p>
+            <b>{{ guestbook.ime }} {{ guestbook.priimek }}:</b> {{ guestbook.sporocilo }}
+            <a href="/guestbook/{{ guestbook.key.id() }}">Podrobosti sporočila</a>
+            <br>
+        </p>
+        <p>{{ guestbook.email }}</p>
+    {% endfor %}
+
+</body>
+</html>
